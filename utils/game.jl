@@ -10,11 +10,8 @@
         self.gameworld.init_gameworld(
             vcat(
                 [
-                 "cymunk_physics",
-                 "rotate_renderer",
                  "rotate",
                  "position",
-                 "cymunk_touch",
                  "color",
                  "camera1",
                  "tile_map",
@@ -81,19 +78,6 @@
         for x = 1:20
             pos = rand(0:Window.width), rand(0:Window.height)
             asteroid = createEntity(entityFactory, "Asteroid", pos)
-            pc = asteroid.components[:PhysicsComponent]
-            physics = PhysicsComponent(
-                pc.mainShape,
-                (rand(-500:500), rand(-500:500)),
-                pos,
-                deg2rad(rand(-360:360)),
-                deg2rad(rand(-150:-150)),
-                pc.velocityLimit,
-                pc.angleVelocityLimit,
-                pc.mass,
-                pc.colShapes,
-            )
-            asteroid.components[:PhysicsComponent] = physics
             self.gameworld.init_entity(
                 toPy(asteroid),
                 orderComponentKeysToPy(asteroid.components),

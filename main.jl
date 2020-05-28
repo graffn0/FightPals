@@ -17,7 +17,6 @@ ConfigParser = pyimport("kivy.config").ConfigParser
 
 # Kivent imports
 pyimport("kivent_core")
-pyimport("kivent_cymunk")
 GameWorld = pyimport("kivent_core.gameworld").GameWorld
 PositionSystem2D = pyimport("kivent_core.systems.position_systems").PositionSystem2D
 RotateSystem2D = pyimport("kivent_core.systems.rotate_systems").RotateSystem2D
@@ -30,7 +29,6 @@ imghdr = pyimport("imghdr")
 
 # Julia imports
 include("components/basic.jl")
-include("components/physics.jl")
 include("components/input.jl")
 
 include("entities/entity.jl")
